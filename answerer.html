@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static "main/common.css" %}"/>
+    <title>Title</title>
+</head>
+<body>
+<h1>Answerer</h1>
+<div><video id="local_stream" autoplay></video></div>
+<div><video id="remote_stream" autoplay></video></div>
+<button id="answer" class="button">Aswer</button>
+<script>
+    "use strict"
+    var peer = RTCPeerConnection({
+        attachStream     	: clientStream,
+
+        onICE     		: function (candidate) {},
+        onRemoteStream  	: function (stream) {},
+
+        // see below two additions ↓
+        offerSDP      	: offer_sdp,
+        onAnswerSDP   	: function(sdp) {}
+    });
+
+</script>
+<script src="https://www.webrtc-experiment.com/dependencies/socket.io.js"></script>
+<script src="https://www.webrtc-experiment.com/dependencies/websocket.js"></script>
+</body>
+</html>

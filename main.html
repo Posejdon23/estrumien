@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static "main/common.css" %}"/>
+    <title>Title</title>
+</head>
+<body>
+<h1>Choose mode:</h1>
+
+<form action="{% url 'main:offerer' %}" method="get"><button class="button">Offerer</button></form>
+<form action="{% url 'main:answerer' %}" method="get"><button class="button">Answerer</button></form>
+</body>
+</html>
